@@ -1,0 +1,35 @@
+Python backend maybe
+Probably just C# tbh
+Server and Client projects.
+Use SQL for a lot of shit
+
+
+Start off just storing location, and have the ability to move to different locations.
+Fuck. Feature. Creep.
+
+
+
+Economy:
+Limited quantity of gold added to economy each day.
+Put gold caps on banks. Start with 1000 gold per bank.
+If a bank hasn't spent any gold, no gold is added.
+If a bank spends some of it, replenish what's gone.
+If a bank spent literally every gold, increase by 50% the next day.
+1000 -> 1500
+If a bank spends that again, up to 2000
+Cap should stay at its highest point for at least a week.
+So, if it raises to 1500 one day because of demand, it will stay at 1500 until demand drops to warrant 1000 for a week.
+
+
+I.e.
+
+Day 1: 1000 gold spent (Raise to 1500)
+Day 2: 1500 gold spent (Raise to 2000)
+Day 3: 1400 gold spent (Stay at 2000, 1/7 days)
+Day 4: 900 gold spent (Stay at 2000, 2/7 days)
+Day 5: 500 gold spent (Stay at 2000, 3/7 days)
+Day 6: 750 gold spent (Stay at 2000, 4/7 days)
+Day 7: 300 gold spent (Stay at 2000, 5/7 days)
+Average gold spent since raise: 770
+Gold needed to maintain: 1000
+Day 8: 500 gold spent (Stay at 1000)
