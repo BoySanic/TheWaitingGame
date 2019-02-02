@@ -6,7 +6,8 @@ namespace Server
 {
     class Global
     {
-        public static List<Objects.Location> Locations = new List<Objects.Location>();
-        public static List<Objects.Player> Players = new List<Objects.Player>();
+        public static Dictionary<string, Objects.Location> Locations = new Dictionary<string, Objects.Location>();
+        public static Dictionary<string, Objects.Player> Players = new Dictionary<string, Objects.Player>();
+        //Maybe make a PlayerCollection and a LocationCollection
     }
 }

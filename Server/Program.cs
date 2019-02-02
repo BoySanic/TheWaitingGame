@@ -16,10 +16,10 @@ namespace Server
             SSDistances.Add("Town Of Beginnings", 5);
             Objects.Location TownOfBeginnings = new Objects.Location("Town of Beginnnings", new int[] { 0, 0 }, TOBDistances);
             Objects.Location ShitShack = new Objects.Location("Shit Shack", new int[] { 1, 0 }, SSDistances);
-            Global.Locations.Add(TownOfBeginnings);
-            Global.Locations.Add(ShitShack);
+            Global.Locations.Add("Town of Beginnnings", TownOfBeginnings);
+            Global.Locations.Add("Shit Shack", ShitShack);
             Objects.Player player = new Objects.Player("BoySanic");
-            Listen();
+            //Listen();
         }
         static void Listen()
         {

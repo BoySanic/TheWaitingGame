@@ -13,5 +13,9 @@ namespace Server.Objects
             this.Name = Name;
             this.CurrentLocation = Global.Locations[0];
         }
+        public MovePlayer(string Destination)
+        {
+            Location destination = Global.Locations[Destination]
+        }
     }
 }

@@ -33,3 +33,6 @@ Day 7: 300 gold spent (Stay at 2000, 5/7 days)
 Average gold spent since raise: 770
 Gold needed to maintain: 1000
 Day 8: 500 gold spent (Stay at 1000)
+
+TODO:
+Look into performance difference between a dictionary and making my own PlayerCollection and LocationCollection class to handle my storage needs.
