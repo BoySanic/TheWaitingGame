@@ -78,7 +78,6 @@ namespace Server.Objects
             Objects.Dijkstra.Node currentNode = new Dijkstra.Node();
             currentNode.Location = start;
             currentNode.Distances = start.Distances;
-            Console.WriteLine(currentNode.Distances[start]);
             while (UnvisitedNodes.Count != 0)
             {
                 if (!(currentNode.Location == Destination))
@@ -89,7 +88,6 @@ namespace Server.Objects
                         if (!(FinalDistances.ContainsKey(kvp.Key)))
                         {
                             FinalDistances.Add(kvp.Key, int.MaxValue);
-                            Console.WriteLine("It doesn't contain it HAHA");
                         }
                         if (FinalDistances.ContainsKey(kvp.Key))
                         {
@@ -114,19 +112,15 @@ namespace Server.Objects
                         {
                             BestNextLocation = kvp.Key;
                             NextBestDistance = currentNode.Distances[kvp.Key] + currentNode.DistanceToStart;
-                            Console.WriteLine("Next best location is set to {0}", BestNextLocation.GetName());
                         }
 
                     }
-                    Console.ReadLine();
                     //Take the best node, already found, and continue.
                     UnvisitedNodes.Remove(currentNode.Location);
                     FinalDistance = currentNode.DistanceToStart;
                     currentNode.Location = BestNextLocation;
                     currentNode.Distances = BestNextLocation.Distances;
                     currentNode.DistanceToStart = NextBestDistance;
-                    Console.WriteLine("currentNode.Location = {0}", currentNode.Location.GetName());
-                    Console.ReadLine();
                 }
                 else
                 {

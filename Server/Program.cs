@@ -43,8 +43,7 @@ namespace Server
             Global.Locations.Add("Cave", Cave);
             Global.Locations.Add("Portal", Portal);
             Objects.Player player = new Objects.Player("BoySanic");
-            int distance = TownOfBeginnings.GetDistance(Portal);
-            Console.WriteLine("Distance is {0}", distance);
+            player.MovePlayer(Portal);
             Console.ReadLine();
             //Listen();
         }

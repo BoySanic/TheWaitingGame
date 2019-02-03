@@ -9,7 +9,7 @@ namespace Server.Objects
         string Name;
         Location CurrentLocation;
         public RemoteClient Client;
-        
+        double Speed = 4.82803;
         public Player(string Name)
         {
             this.Name = Name;
@@ -33,6 +33,10 @@ namespace Server.Objects
         {
             Location destination = Global.Locations[Destination.GetName()];
             int DistanceToMove = CurrentLocation.GetDistance(Destination);
+            double TimeToWait = DistanceToMove / Speed;
+            DateTime dt = DateTime.Now.AddHours(TimeToWait);
+            Global.PlayerTimers.Add(this, dt);
+            Console.WriteLine("You will arrive at your destination at {0}", dt);
         }
     }
 }

@@ -44,3 +44,12 @@ Adding locations to a town's distances means it has a direct path to that locati
 If distance is 0, there's no direct path.
 
 Create a pathing algorithm to figure out total distance to a location if you have to go through multiple nodes to get to a location.
+
+
+
+
+Town of Beginnings -> Shit Shack (5) -> Cave (10) -> Portal (3)
+
+
+Make Location a broader class, have town subclasses and stuff.
+A cave or a portal doesn't need a bank, so that's a no-no.
