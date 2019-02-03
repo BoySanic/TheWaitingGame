@@ -6,16 +6,33 @@ namespace Server.Objects
 {
     class Player
     {
-        public string Name;
-        public Location CurrentLocation;
+        string Name;
+        Location CurrentLocation;
+        public RemoteClient Client;
+        
         public Player(string Name)
         {
             this.Name = Name;
-            this.CurrentLocation = Global.Locations[0];
+            CurrentLocation = Global.Locations["Town of Beginnings"];
+
+
         }
-        public MovePlayer(string Destination)
+        public string GetName()
         {
-            Location destination = Global.Locations[Destination]
+            return Name;
+        }
+        public void SetName(string Name)
+        {
+            this.Name = Name;
+        }
+        public Location GetLocation()
+        {
+            return this.CurrentLocation;
+        }
+        public void MovePlayer(Location Destination)
+        {
+            Location destination = Global.Locations[Destination.GetName()];
+            int DistanceToMove = CurrentLocation.GetDistance(Destination);
         }
     }
 }

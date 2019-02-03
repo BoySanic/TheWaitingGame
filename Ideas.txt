@@ -36,3 +36,11 @@ Day 8: 500 gold spent (Stay at 1000)
 
 TODO:
 Look into performance difference between a dictionary and making my own PlayerCollection and LocationCollection class to handle my storage needs.
+
+
+
+
+Adding locations to a town's distances means it has a direct path to that location.
+If distance is 0, there's no direct path.
+
+Create a pathing algorithm to figure out total distance to a location if you have to go through multiple nodes to get to a location.

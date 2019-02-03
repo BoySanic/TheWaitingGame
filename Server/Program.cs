@@ -10,15 +10,42 @@ namespace Server
     {
         static void Main(string[] args)
         {
-            Dictionary<string, int> TOBDistances = new Dictionary<string, int>();
-            TOBDistances.Add("ShitShack", 5);
-            Dictionary<string, int> SSDistances = new Dictionary<string, int>();
-            SSDistances.Add("Town Of Beginnings", 5);
-            Objects.Location TownOfBeginnings = new Objects.Location("Town of Beginnnings", new int[] { 0, 0 }, TOBDistances);
-            Objects.Location ShitShack = new Objects.Location("Shit Shack", new int[] { 1, 0 }, SSDistances);
-            Global.Locations.Add("Town of Beginnnings", TownOfBeginnings);
+            Objects.Location TownOfBeginnings = new Objects.Location("Town Of Beginnings");
+            Objects.Location ShitShack = new Objects.Location("Shit Shack");
+            Objects.Location Cave = new Objects.Location("Cave");
+            Objects.Location Portal = new Objects.Location("Portal");
+            Dictionary<Objects.Location, int> TOBDistances = new Dictionary<Objects.Location, int>();
+            TOBDistances.Add(ShitShack, 5);
+            TOBDistances.Add(TownOfBeginnings, 0);
+            TOBDistances.Add(Cave, int.MaxValue);
+            TOBDistances.Add(Portal, int.MaxValue);
+            Dictionary<Objects.Location, int> SSDistances = new Dictionary<Objects.Location, int>();
+            SSDistances.Add(TownOfBeginnings, 5);
+            SSDistances.Add(ShitShack, 0);
+            SSDistances.Add(Cave, 10);
+            SSDistances.Add(Portal, int.MaxValue);
+            Dictionary<Objects.Location, int> CaveDistances = new Dictionary<Objects.Location, int>();
+            CaveDistances.Add(TownOfBeginnings, int.MaxValue);
+            CaveDistances.Add(ShitShack, 10);
+            CaveDistances.Add(Cave, 0);
+            CaveDistances.Add(Portal, 3);
+            Dictionary<Objects.Location, int> PortalDistances = new Dictionary<Objects.Location, int>();
+            PortalDistances.Add(TownOfBeginnings, int.MaxValue);
+            PortalDistances.Add(ShitShack, int.MaxValue);
+            PortalDistances.Add(Cave, 3);
+            PortalDistances.Add(Portal, 0);
+            TownOfBeginnings.SetDistances(TOBDistances);
+            ShitShack.SetDistances(SSDistances);
+            Cave.SetDistances(CaveDistances);
+            Portal.SetDistances(PortalDistances);
+            Global.Locations.Add("Town of Beginnings", TownOfBeginnings);
             Global.Locations.Add("Shit Shack", ShitShack);
+            Global.Locations.Add("Cave", Cave);
+            Global.Locations.Add("Portal", Portal);
             Objects.Player player = new Objects.Player("BoySanic");
+            int distance = TownOfBeginnings.GetDistance(Portal);
+            Console.WriteLine("Distance is {0}", distance);
+            Console.ReadLine();
             //Listen();
         }
         static void Listen()
